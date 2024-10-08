@@ -1,0 +1,206 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+.left-column {
+    width: 1000%;
+    padding-right: -100px;
+    border-right: 4px solid #333;
+}
+
+.left-column, .right-column {
+    width: 100%;
+    padding: 10px;
+}
+
+
+/* Left Column */
+.left-column {
+    margin-bottom: 50px;
+    border-right: 10px;
+    padding-right: 150;
+}
+
+.profile img {
+    width: 200px;
+    height: 200px;
+    border-radius: 100%;
+    margin: 0 auto 40px;
+    display: block;
+}
+
+/* Biography Section - Moved to Top */
+.biography {
+    margin-bottom: 40px;
+}
+
+.biography p {
+    margin-top: 20px;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+/* Personal Info Section - Moved Below Biography */
+.personal-info {
+    margin-top: 20px;
+}
+
+.personal-info h2 {
+    font-size: 1.5rem;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+    text-align: center;
+}
+
+.personal-info p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+/* Right Column */
+.right-column {
+    padding-left: 100;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.header h1 {
+    font-size: 2rem;
+    color: #333;
+}
+
+.header p {
+    font-size: 1.1rem;
+    color: #666;
+    margin-top: 5px;
+}
+
+/* Section Titles */
+h2 {
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #333;
+    padding-bottom: 5px;
+}
+
+/* Skills Section */
+.skills ul {
+    list-style: square inside;
+    padding: 0;
+    margin-bottom: 20px;
+}
+
+.skills ul li {
+    font-size: 1rem;
+    margin-bottom: 8px;
+}
+
+/* Education Section */
+.education table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.education table td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Work Experience Section */
+.work-experience p {
+    font-size: 1rem;
+    margin-top: 10px;
+}
+
+/* Watermark */
+.watermark {
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    font-size: 1rem;
+    color: rgba(0, 0, 0, 0.2); /* Warna hitam dengan transparansi 20% */
+    z-index: 1000;
+    font-weight: bold;
+}
+
+/* Media Queries */
+
+/* Tablet Layout (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .container {
+        flex-direction: row;
+        width: 80%;
+    }
+    
+    .left-column {
+        width: 35%;
+        padding-right: 20px;
+        border-right: 2px solid #333;
+        margin-bottom: 0;
+    }
+
+    .right-column {
+        width: 65%;
+        padding-left: 20px;
+    }
+}
+
+/* Laptop and Larger Screens (1024px and up) */
+@media (min-width: 1024px) {
+    .container {
+        flex-direction: row;
+        width: 80%;
+    }
+
+    .left-column {
+        width: 35%;
+        padding-right: 20px;
+        border-right: 2px solid #333;
+        margin-bottom: 0;
+        /* Swap Order */
+        order: 1;
+    }
+
+    .biography {
+        /* Move Biography below Profile */
+        order: 2;
+    }
+
+    .personal-info {
+        /* Move Personal Info below Biography */
+        order: 3;
+    }
+
+    .right-column {
+        width: 65%;
+        padding-left: 20px;
+        order: 4;
+    }
+}
